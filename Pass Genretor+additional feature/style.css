@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+:root {
+    --or-color1: #181228;
+    --or-color2: #ECF2FF;
+    --or-organge: #e84949;
+
+}
+body
+{
+    width: 100%;
+    height: 100vh;
+    color: var(--or-color2);
+    background-color: var(--or-color2);
+}
+
+   /* dark mode  */
+ :root .dark-mode {
+
+     --or-color1:#ECF2FF;
+    --or-color2:#0a0810 ;
+    --or-organge: #e84949;
+} 
+body .dark-mode
+{
+    width: 100%;
+    height: 100vh;
+    color: var(--or-color2);
+    background-color: var(--or-color2);
+} 
+
+
+
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:var(--or-color2)
+   
+}
+
+.container {
+    width: 90%;
+    max-width: 450px;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.2;
+    color:var(--or-color1);
+}
+
+.display-container {
+    position: relative;
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+    box-shadow: 1px 1px 5px 0.5px gray;
+    border-radius: 0.35rem;
+}
+
+.display {
+    width: 100%;
+    background-color: transparent;
+    padding: 1.15rem 1rem;
+    color: var(--or-color1);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+    border: none;
+    outline: none;
+}
+
+.display::placeholder {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+    color:var(--or-color1);
+    opacity: 0.65;
+    text-transform: uppercase;
+    transform: translateY(-50%);
+
+}
+
+.display-container button {
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+}
+
+.input-container {
+    width: 100%;
+    padding: 2rem;
+    box-shadow: 1px 1px 5px 0.5px gray;
+    border-radius: 0.35rem
+}
+
+.length-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.length-container p:nth-child(1) {
+ 
+    font-size: 1.5rem;
+    color:var(--or-color1);
+
+}
+
+.length-container p:nth-child(2) {
+    font-size: 1.5rem;
+    color:var(--or-color1);
+
+}
+
+.strength-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.strength-container p {
+    color:var(--or-color1);
+    font-size: 1.5rem;
+}
+
+.indicator {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+.generateButton {
+    background-color: #e84949;
+    color: var(--or-color2);
+    box-shadow: 5px 5px 7px 0px #0000003f;
+     font-weight: bolder;
+
+    transition: all 0.5s;
+    font-weight: 500;
+    border: solid 3px transparent;
+    position: relative;
+
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    border-radius: 0.35rem;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.generateButton::before {
+    content: "";
+    position: absolute;
+    background-color: var(--or-color2);
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.8s;
+    border-radius: 0.35rem;
+
+}
+
+.generateButton:hover::before {
+    transform: scaleX(1);
+}
+
+.generateButton:hover {
+    border: solid 3px #e84949;
+    color: var(--or-color1);
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    gap: 0 1rem;
+}
+
+.check input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: solid 3px transparent;
+
+    cursor: pointer;
+    position: relative;
+    border-radius: 0.35rem;
+    box-shadow: 1px 1px 3px 0.1px var(--or-organge);
+
+}
+
+.check input:checked {
+    background-color: var(--or-organge);
+}
+
+.check input:checked::before {
+    content: '✔';
+    position: absolute;
+    color:var(--or-color2);
+    font-size: 1.05rem;
+    font-weight: 600;
+    left: 50%;
+    top: -3.5px;
+
+    transform: translateX(-50%);
+}
+
+.check label {
+    font-size: 1.25rem;
+    letter-spacing: 0.75px;
+    color:var(--or-color1);
+
+}
+.copybtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: var(--or-organge);
+    color: var(--or-color2);
+    font-size: 1.25rem;
+    top: -35px;
+    left: -25px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+}
+
+.tooltip.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.slider {
+    appearance: none;
+    width: 100%;
+    height: 0.75rem;
+    cursor: pointer;
+    background-color: var(--or-color2);
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    background-image: linear-gradient(var(--or-organge), var(--or-organge));
+    background-repeat: no-repeat;
+    outline: 3px solid rgba(128, 128, 128, 0.756);
+
+
+}
+
+.slider::-webkit-slider-thumb {
+    position: relative;
+    z-index: 1;
+    appearance: none;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: var(--or-organge);
+    cursor: pointer;
+    margin-top: -3px;
+
+    transition: all 200ms ease-in;
+
+
+}
+
+.slider::-webkit-slider-thumb:hover {
+    outline: 2px solid var(--or-organge);
+    background-color: var(--or-color2);
+    box-shadow: 0px 0px 25px 5px var(--or-organge);
+
+}
+
+
+#checkbox
+{
+    visibility: hidden;
+}
+
+
+.toggle-label{
+   width: 4rem;
+   height: 2.5rem;
+   background-color: var(--or-color1);
+   display: inline-block;
+   position: relative;
+   border-radius: 10rem;  
+   cursor: pointer;
+}
+
+.toggle-ball{
+   width: 1.5rem; 
+   height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--or-color2);
+    display: inline-block;
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    transition: all 0.2s linear;
+}
+
+#checkbox:checked + .toggle-label .toggle-ball
+{
+    transform: translateX(1.5rem);
+    background-color: #5FC3E4;
+
+}
+
+nav{
+    height: 70px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    box-shadow: 0px 0px 10px 0.5px gray;
+
+}
